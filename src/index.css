@@ -1,0 +1,125 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 265 89% 66%; /* Purple */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 196 94% 48%; /* Teal */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46.1%;
+
+    --accent: 265 89% 96%;
+    --accent-foreground: 265 89% 66%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 265 89% 66%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 265 89% 66%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 196 94% 48%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 6% 65%;
+
+    --accent: 240 5% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 265 89% 66%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-drip-purple text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all;
+  }
+  
+  .btn-secondary {
+    @apply bg-drip-teal text-white px-6 py-3 rounded-md font-medium hover:opacity-90 transition-all;
+  }
+  
+  .btn-outline {
+    @apply border-2 border-drip-purple text-drip-purple px-6 py-[10px] rounded-md font-medium hover:bg-drip-purple hover:text-white transition-all;
+  }
+}
+
+/* Add animation keyframes for product details page */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out;
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out;
+}
